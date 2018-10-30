@@ -2937,57 +2937,8 @@ client.on("message", async message => {
             }
             });
 
-            client.on('message', message => {
-              if (message.author.bot) return;
-              if (!message.content.startsWith(prefix)) return;
-              let command = message.content.split(" ")[0];
-              command = command.slice(prefix.length);
 
-              let args = message.content.split(" ").slice(1);
-
-            if (command == "embed") {
-                let say = new Discord.RichEmbed()
-              .setThumbnail(message.author.avatarURL)
-              .setAuthor(message.author.username)
-                .setDescription(args.join("  "))
-                .setColor(0x06DF00)
-                message.channel.sendEmbed(say);
-                message.delete();
-              }
-              });
-
-
-
-
-                    client.on('message', message => {
-                    var prefix = "#";
-                           if(message.content === prefix + "mutechannel") {
-                                               if(!message.channel.guild) return message.reply('** This command only for servers**');
-
-                       if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
-                                  message.channel.overwritePermissions(message.guild.id, {
-                                SEND_MESSAGES: false
-
-                                  }).then(() => {
-                                      message.reply("**__تم تقفيل الشات__ ✅ **")
-                                  });
-                                    }
-                    //FIRE BOT
-                        if(message.content === prefix + "unmutechannel") {
-                                            if(!message.channel.guild) return message.reply('** This command only for servers**');
-
-                       if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
-                                  message.channel.overwritePermissions(message.guild.id, {
-                                SEND_MESSAGES: true
-
-                                  }).then(() => {
-                                      message.reply("**__تم فتح الشات__✅**")
-                                  });
-                        }
-
-                  
-
-
+    
 
 
 
