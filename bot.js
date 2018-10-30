@@ -2793,7 +2793,7 @@ client.on("message", async message => {
 
         client.on('message', async msg => {
               client.snek = require('snekfetch');
-            var p = "."
+            var p = "#"
           if(msg.content.startsWith(p + "isay")) {
            let args = msg.content.split(' ').slice(1).join(' ');
           if(!args) return args.missing(msg, 'No text added', this.help);
