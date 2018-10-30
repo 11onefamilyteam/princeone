@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "#"
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -153,16 +154,6 @@ client.on('message', msg => {
 
 
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`** :hearts: Welcome to the server :hearts:
-  :grinning:  member name --> __${member}__ :grinning:
-  :bust_in_silhouette:  You are a member number --> __${member.guild.memberCount}__ :bust_in_silhouette:
-  :airplane: __${moment().format('HH:mm:ss A')}__ <-- Date of entry of the server ** :airplane: `)
-}).catch(console.error)
-})
-
-
 client.on('guildBanAdd', function(guild) {
             const rebellog = client.channels.find("name", "log"),
             Onumber = 3,
@@ -257,66 +248,6 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 
-  client.on('guildMemberAdd',async member => {
- const Canvas = require('canvas-prebuilt');
-    const jimp = require('jimp');
-    const w = ['https://cdn.discordapp.com/attachments/501934508178800640/502507208949628928/welcome_4.png'];
-          let Image = Canvas.Image,
-              canvas = new Canvas(800, 300),
-              ctx = canvas.getContext('2d');
-          ctx.patternQuality = 'bilinear';
-          ctx.filter = 'bilinear';
-          ctx.antialias = 'subpixel';
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-          ctx.shadowOffsetY = 2;
-          ctx.shadowBlur = 2;
-          ctx.stroke();
-          ctx.beginPath();
-
-          fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-              if (err) return console.log(err);
-              let BG = Canvas.Image;
-              let ground = new Image;
-              ground.src = Background;
-              ctx.drawImage(ground, 0, 0, 800, 300);
-
-  })
-
-                  let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
-                  jimp.read(url, (err, ava) => {
-                      if (err) return console.log(err);
-                      ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-                   if (err) return console.log(err);
-
-            ctx.font = '36px Arial';
-            ctx.fontSize = '72px';
-            ctx.fillStyle = "#ffffff";
-            ctx.textAlign = "center";
-            ctx.fillText(member.user.username, 545, 177);
-
-            ctx.font = '16px Arial Bold';
-            ctx.fontSize = '72px';
-            ctx.fillStyle = "#ffffff";
-            ctx.textAlign = "center";
-            ctx.fillText(`${member.guild.memberCount} Members`, 580, 200);
-
-            let Avatar = Canvas.Image;
-            let ava = new Avatar;
-            ava.src = buf;
-            ctx.beginPath();
-            ctx.arc(169.5, 148, 126.9, -100, Math.PI * 2, true);
-            ctx.closePath();
-            ctx.clip();
-            ctx.drawImage(ava, 36, 21, 260, 260);
-
-  		  const c = client.channels.get("504667635644891159");
-            c.sendFile(canvas.toBuffer());
-
-  });
-  });
-  });
-
-
 
      client.on('message',async msg => {
           if(msg.channel.type === "dm") return;
@@ -379,34 +310,6 @@ channel.guild.owner.send(`<@!${channelremover.id}>
      });
 
 
-
-
-
-     client.on('message', message => {
-      if (message.content.startsWith("☄-★-welcome-☆-☇ۨ")) {
-                                      var mentionned = message.mentions.users.first();
-                  var mentionavatar;
-                    if(mentionned){
-                        var mentionavatar = mentionned;
-                    } else {
-                        var mentionavatar = message.author;
-
-                    }
-                    let bot;
-                    if(message.author.bot) {
-                        bot = 'Prince Bot™'
-                    } else {
-                        bot = '[User]'
-                    }
-       var EsTeKnAN = new Discord.RichEmbed()
-       .setColor('RANDOM')
-       .setThumbnail(`${mentionavatar.avatarURL}`)
-       .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-       .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
-       .setImage('https://www.askideas.com/media/13/Welcome-Sign-For-Front-Door.jpg')
-        message.channel.sendEmbed(EsTeKnAN);
-       }
-     });
 
 
 
@@ -480,23 +383,6 @@ channel.guild.owner.send(`<@!${channelremover.id}>
      msg.user.sendMessage(AlphaE);
      });
 
-
-
-
-     client.on("guildMemberAdd", msg => {
-       var AlphaE = new Discord.RichEmbed()
-     .setColor("RANDOM")
-     .setAuthor(msg.user.username, msg.user.avatarURL)
-     .setThumbnail(msg.user.avatarURL)
-     .setTitle(`
-     مرحبا بك في السيرفر
-     نتمى ان تدخل الي السيرفر
-     `)
-     .addField("هذي الرساله خاصه بك يا حبيبي", `${msg.user.tag}`, true)
-     .addField(`https://discord.gg/YVhzefe`,`Link`, true)
-      .setFooter(msg.user.tag, msg.user.avatarURL, true)
-     msg.user.sendMessage(AlphaE);
-     });
 
 
 
@@ -631,7 +517,7 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
       client.on('message', message => {
-        if(message.content === "info") {
+        if(message.content === "#info") {
             const embed = new Discord.RichEmbed()
             .setColor("#00FFFF")
       .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
@@ -1351,7 +1237,7 @@ var fkk =[
 
 
 
-     console.log('mariam');
+     console.log('#mariam');
      client.on('ready', () => {
        console.log(`im redey`);
      });
@@ -2198,6 +2084,15 @@ message.channel.send(`**${message.author} تم رفض عرضك**`);
 }
 });
 
+
+
+
+
+
+
+
+
+
 client.on("ready", () => {
   function lol() {
     client.guilds.get('471388124719874068').roles.find("name", "Disco").setColor("RANDOM");
@@ -2519,14 +2414,6 @@ message.channel.sendEmbed(embed);
          });
 
 
-         client.on('guildMemberAdd', member=> {
-             member.addRole(member.guild.roles.find("name","member"));
-             });
-
-             client.on('guildMemberAdd', member=> {
-                 member.addRole(member.guild.roles.find("name","Disco"));
-                 });
-
 
              client.on("message", message => {
 
@@ -2677,16 +2564,6 @@ message.channel.sendEmbed(embed);
        }
        });
 
-
-
-       client.on('ready', () => {
-           console.log(`Logged in as ${client.user.tag}!`);
-           client.user.setStatus("Online")
-       });
-         client.on('ready', () => {
-            client.user.setActivity("𝒯ℐ𝒢ℰℛ| ● Øℱ ●",{type: 'LISTENING'});
-
-       });
 
 
 
@@ -3079,27 +2956,6 @@ client.on("message", async message => {
               }
               });
 
-
-
-                  client.on('message', function(msg) {
-                      const prefix = '#'
-                      if(msg.content.startsWith ('#server')) {
-                        let embed = new Discord.RichEmbed()
-                        .setColor('RANDOM')
-                        .setThumbnail(msg.guild.iconURL)
-                        .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-                        .addField('🌐** server type**',`[** __${msg.guild.region}__ **]`,true)
-                        .addField('🏅** __Roles__**',`[** __${msg.guild.roles.size}__ **]`,true)
-                        .addField('🔴**__ Members Number__**',`[** __${msg.guild.memberCount}__ **]`,true)
-                        .addField('🔵**__ Members Number who online__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
-                        .addField('📝**__ Text Channels__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
-                        .addField('🎤**__ voice Channels__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
-                        .addField('👑**__ The Owner__**',`**${msg.guild.owner}**`,true)
-                        .addField('🆔**__ Server ID__**',`**${msg.guild.id}**`,true)
-                        .addField('📅**__The date when the server created __**',msg.guild.createdAt.toLocaleString())
-                        msg.channel.send({embed:embed});
-                      }
-                    });
 
 
 
