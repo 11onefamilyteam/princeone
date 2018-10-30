@@ -1934,7 +1934,7 @@ client.on('message', message => {
 
      client.on("message", async message => {
          if(!message.channel.guild) return;
-         if(message.content.startsWith(prefix + 'server NH')) {
+         if(message.content.startsWith(prefix + 'server.P')) {
          let guild = message.guild
          let channel = message.channel
          let guildicon = guild.icon_url
