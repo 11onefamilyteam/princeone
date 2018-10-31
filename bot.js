@@ -2832,7 +2832,7 @@ client.on("message", async message => {
             client.on('ready', function(){
               client.user.setStatus("dnd");
                 var ms = 40000 ;
-                var setGame = ['Ana-bot-Tiger&Galal'];
+                var setGame = ['Prince Bot™'];
                 var i = -1;
                 var j = 0;
                 setInterval(function (){
