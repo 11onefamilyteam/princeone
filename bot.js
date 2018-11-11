@@ -1472,7 +1472,7 @@ var fkk =[
 
 
    client.on('message', async message => {
-     if(message.content.startsWith(prefix + "ms")) {
+     if(message.content.startsWith(prefix + "Ps")) {
      await  message.channel.send(`اكتب اقتراحك الان`)
        let filter = m => m.author.id === message.author.id
          var text = '';
@@ -1481,7 +1481,7 @@ var fkk =[
                text = co.first().content
 
                  message.channel.send(`تم حفظ اقتراحك الرجاء انتضار الرد من قبل الاداره`)
-                   client.channels.get("503968239093678098").send(`${message.author.username}'s sug => ${text}`)
+                   client.channels.get("511195590768721931").send(`${message.author.username}'s sug => ${text}`)
 
                  })
                }
