@@ -1470,23 +1470,29 @@ var fkk =[
 
 
 
+client.on('message', message =>{
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let prefix = '$';
 
-   client.on('message', async message => {
-     if(message.content.startsWith(prefix + "Ps")) {
-     await  message.channel.send(`اكتب اقتراحك الان`)
-       let filter = m => m.author.id === message.author.id
-         var text = '';
-           let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
-             .then(co => {
-               text = co.first().content
+if(cmd === `${prefix}Ps`) {
+    var suggestMessage = message.content.substring(8)
+    let suggestEMBED = new Discord.RichEmbed()
+    .setColor(3447003)
+    .setTitle("New suggest just added!!")
+    .setDescription(`**${suggestMessage}**`)
+    .setFooter(`Suggested By : ${message.author.tag}`);
+    message.delete().catch(O_o=>{}) 
+    let suggests = message.guild.channels.find(`name`, "suggests");
+    if (!suggests) return message.channel.send("You should make A **suggests** channel!")
+    suggests.send(suggestEMBED);
+}
 
-                 message.channel.send(`تم حفظ اقتراحك الرجاء انتضار الرد من قبل الاداره`)
-                   client.channels.get("511195590768721931").send(`${message.author.username}'s sug => ${text}`)
+});
 
-                 })
-               }
-             })
 
+   
 
 
 
