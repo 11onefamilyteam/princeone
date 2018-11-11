@@ -2089,7 +2089,7 @@ message.channel.send(`**${message.author} تم رفض عرضك**`);
 
 client.on("ready", () => {
   function lol() {
-    client.guilds.get('458253633037795328').roles.find("name", "Disco").setColor("RANDOM");
+    client.guilds.get('506858325137424435').roles.find("name", "Disco").setColor("RANDOM");
   };
   setInterval(lol, 10000);
 });
