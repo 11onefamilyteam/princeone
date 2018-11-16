@@ -2157,47 +2157,9 @@ message.channel.send(`**${message.author} تم رفض عرضك**`);
 
 
 
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('506858325137424435').roles.find("name", "Disco").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
 
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('471388124719874068').roles.find("name", "Disco").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
 
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('491659350772023306').roles.find("name", "Disco").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
 
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('462260881535795200').roles.find("name", "Disco").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
-
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('455146162735808522').roles.find("name", "Disco").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
-
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('490668412452995102').roles.find("name", "Disco").setColor("RANDOM");
-  };
-  setInterval(lol, 10000);
-});
 
 
 
