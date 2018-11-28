@@ -2155,9 +2155,19 @@ message.channel.send(`**${message.author} تم رفض عرضك**`);
 });
 
 
+client.on("ready", () => {
+  function lol() {
+    client.guilds.get('506858325137424435').roles.find("name", "Disco").setColor("RANDOM");
+  };
+  setInterval(lol, 10000);
+});
 
-
-
+client.on("ready", () => {
+  function lol() {
+    client.guilds.get('499290478747844611').roles.find("name", "Disco").setColor("RANDOM");
+  };
+  setInterval(lol, 10000);
+});
 
 
 
