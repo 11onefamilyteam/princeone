@@ -698,7 +698,17 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 
-
+client.on('guildMemberAdd', member => {
+    var embed = new Discord.RichEmbed()
+    .setThumbnail(member.user.avatarURL)
+  .addField("***شكرا الانضمامك الينا***" ,member.user.username )
+    .setDescription('**هلا بيك في سرفرنا ي بطل**')
+    .setColor('RANDOM')
+    .setImage('https://cdn.pg.sa/aWvf85iynw.png')
+var channel = member.guild.channels.find('name', 'welcome')
+if (!channel) return;
+channel.send({embed : embed});
+});
 
 
 
